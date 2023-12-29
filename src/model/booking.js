@@ -1,4 +1,6 @@
 const pool = require('../config/db');
+const timeslot = require('../constant/timeslot');
+const { formatTime } = require('../utils/date');
 const { 
     getRoomById
 } = require('./room'); 
@@ -37,6 +39,11 @@ const createBooking = async (room_id, start_time, end_time, purpose) => {
             throw new Error('Room not found');
         }
 
+        const requestedSlot = `${formatTime(start_time)}-${formatTime(end_time)}`;
+        if (!timeslot.includes(requestedSlot)) {
+            throw new Error('Invalid time slot for booking');
+        }
+
         if (await isBookingOverlap(room_id, start_time, end_time)) {
             throw new Error('Room is already booked during the specified time');
         }
@@ -70,6 +77,11 @@ const updateBooking = async (id, room_id, start_time, end_time, purpose) => {
         const room = await getRoomById(room_id);
         if (!room) {
             throw new Error('Room not found');
+        }
+
+        const requestedSlot = `${formatTime(start_time)}-${formatTime(end_time)}`;
+        if (!timeslot.includes(requestedSlot)) {
+            throw new Error('Invalid time slot for booking');
         }
 
         if (await isBookingOverlap(room_id, start_time, end_time, id)) {
@@ -117,10 +129,35 @@ const deleteBooking = async (id) => {
     }
 };
 
+const checkRoomAvailabilityForDay = async (roomId, date) => {
+    const availability = {};
+
+    for (const slot of timeslot) {
+        const [startTime, endTime] = slot.split("-");
+        const startDateTime = `${date}T${startTime}:00`;
+        const endDateTime = `${date}T${endTime}:00`;
+
+        const room = await getRoomById(roomId);
+        if (!room) {
+            throw new Error('Room not found');
+        }
+
+        const { rows } = await pool.query(
+            'SELECT 1 FROM bookings WHERE room_id = $1 AND NOT (end_time <= $2 OR start_time >= $3)',
+            [roomId, startDateTime, endDateTime]
+        );
+
+        availability[slot] = rows.length === 0 ? "Available" : "Booked";
+    }
+
+    return availability;
+};
+
 module.exports = {
     getAllBookings,
     getBookingById,
     createBooking,
     updateBooking,
-    deleteBooking
+    deleteBooking,
+    checkRoomAvailabilityForDay
 };

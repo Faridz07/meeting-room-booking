@@ -2026,7 +2026,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n    \"start_time\": \"2023-07-01T11:00:00\",\n    \"end_time\": \"2023-07-01T13:00:00\",\n    \"purpose\": \"Team Meeting\"\n}"
+							"raw": "{\n    \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n    \"start_time\": \"2023-07-01T09:00:00\",\n    \"end_time\": \"2023-07-01T10:00:00\",\n    \"purpose\": \"Team Meeting\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/bookings",
@@ -2183,25 +2183,81 @@
 							"body": "{\n    \"message\": \"Room is already booked during the specified time\"\n}"
 						},
 						{
+							"name": "ERROR-Invalid Slot Time",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n    \"start_time\": \"2023-07-01T11:00:00\",\n    \"end_time\": \"2023-07-01T13:00:00\",\n    \"purpose\": \"Team Meeting\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/bookings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bookings"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-KHZejIYG8NDKGZeadYPecBz2buQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 11:28:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid time slot for booking\"\n}"
+						},
+						{
 							"name": "SUCCESS",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"value": "application/json"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n    \"start_time\": \"2023-07-01T11:00:00\",\n    \"end_time\": \"2023-07-01T13:00:00\",\n    \"purpose\": \"Team Meeting\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
+									"raw": "{\n    \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n    \"start_time\": \"2023-07-01T09:00:00\",\n    \"end_time\": \"2023-07-01T10:00:00\",\n    \"purpose\": \"Team Meeting\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:3000/api/bookings",
@@ -2234,11 +2290,11 @@
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"c5-p1v40xT2aCbXd3uQeT3ldhffoRA\""
+									"value": "W/\"c5-zHzMGIeD2bk0p+5BsZHWXCsjuA4\""
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 29 Dec 2023 10:19:54 GMT"
+									"value": "Fri, 29 Dec 2023 11:29:13 GMT"
 								},
 								{
 									"key": "Connection",
@@ -2250,7 +2306,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": \"0c33f385-32dc-4848-877c-72918ca99c8c\",\n    \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n    \"start_time\": \"2023-07-01T11:00:00.000Z\",\n    \"end_time\": \"2023-07-01T13:00:00.000Z\",\n    \"purpose\": \"Team Meeting\"\n}"
+							"body": "{\n    \"id\": \"9da9d76a-6e0f-40d1-81b9-0f432335eafa\",\n    \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n    \"start_time\": \"2023-07-01T09:00:00.000Z\",\n    \"end_time\": \"2023-07-01T10:00:00.000Z\",\n    \"purpose\": \"Team Meeting\"\n}"
 						}
 					]
 				},
@@ -2552,7 +2608,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n    \"start_time\": \"2023-07-01T09:00:00\",\n    \"end_time\": \"2023-07-01T13:00:00\",\n    \"purpose\": \"Team Meeting\"\n}"
+							"raw": "{\n    \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n    \"start_time\": \"2023-07-01T10:00:00\",\n    \"end_time\": \"2023-07-01T11:00:00\",\n    \"purpose\": \"Team Meeting\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/bookings/:booking-id",
@@ -2891,7 +2947,7 @@
 							"variable": [
 								{
 									"key": "booking-id",
-									"value": "0c33f385-32dc-4848-877c-72918ca99c8c"
+									"value": "cd858d08-531b-4b4d-90ec-9c7404eaba13"
 								}
 							]
 						}
@@ -3018,6 +3074,313 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"message\": \"Booking not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Check Availablity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/bookings/rooms/:room-id/availability/:date",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bookings",
+								"rooms",
+								":room-id",
+								"availability",
+								":date"
+							],
+							"variable": [
+								{
+									"key": "room-id",
+									"value": "c4737bb3-09b1-4304-8888-a52eb6f34f8e"
+								},
+								{
+									"key": "date",
+									"value": "2023-07-01"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ERROR-Invalid UUID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/bookings/rooms/:room-id/availability/:date",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bookings",
+										"rooms",
+										":room-id",
+										"availability",
+										":date"
+									],
+									"variable": [
+										{
+											"key": "room-id",
+											"value": ""
+										},
+										{
+											"key": "date",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-NnEhvjRfFkMl/YwE/CGJW5U7yMk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 11:22:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid UUID format\"\n}"
+						},
+						{
+							"name": "ERROR-Date Required",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/bookings/rooms/:room-id/availability/:date",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bookings",
+										"rooms",
+										":room-id",
+										"availability",
+										":date"
+									],
+									"variable": [
+										{
+											"key": "room-id",
+											"value": "c4737bb3-09b1-4304-8888-a52eb6f34f8e"
+										},
+										{
+											"key": "date",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40-L1uTbDy+K9A/RzEE2vqXV4itNSc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 11:23:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid or missing date. Format must be YYYY-MM-DD\"\n}"
+						},
+						{
+							"name": "ERROR-Room Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/bookings/rooms/:room-id/availability/:date",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bookings",
+										"rooms",
+										":room-id",
+										"availability",
+										":date"
+									],
+									"variable": [
+										{
+											"key": "room-id",
+											"value": "c4737bb3-09b1-4304-8888-a52eb6f34f82"
+										},
+										{
+											"key": "date",
+											"value": "2023-07-01"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-ecF7Xczsy7b75ZFcGvwagM/Xkog\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 11:25:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Room not found\"\n}"
+						},
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/bookings/rooms/:room-id/availability/:date",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bookings",
+										"rooms",
+										":room-id",
+										"availability",
+										":date"
+									],
+									"variable": [
+										{
+											"key": "room-id",
+											"value": "c4737bb3-09b1-4304-8888-a52eb6f34f8e"
+										},
+										{
+											"key": "date",
+											"value": "2023-07-01"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "265"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"109-Ar7dmm3g5rJw1JW8SyY9l0IBdPA\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 11:31:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"roomId\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n    \"date\": \"2023-07-01\",\n    \"availability\": {\n        \"08:00-09:00\": \"Available\",\n        \"09:00-10:00\": \"Booked\",\n        \"10:00-11:00\": \"Available\",\n        \"11:00-12:00\": \"Available\",\n        \"13:00-14:00\": \"Available\",\n        \"15:00-16:00\": \"Available\",\n        \"16:00-17:00\": \"Available\"\n    }\n}"
 						}
 					]
 				}

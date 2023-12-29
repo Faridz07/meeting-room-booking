@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const { validateUUID } = require('../utils/uuid');
+const { isValidDate } = require('../utils/date');
 const {
     getAllBookings,
     getBookingById,
     createBooking,
     updateBooking,
     deleteBooking,
-    checkRoomAvailability
+    checkRoomAvailabilityForDay
 } = require('../model/booking');
 
 // Get all bookings
@@ -84,6 +85,30 @@ router.delete('/:id', async (req, res) => {
             return res.status(404).json({ message: 'Booking not found' });
         }
         res.json({ message: 'Booking deleted successfully', deletedBooking });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+// Check room availability for a day
+router.get('/rooms/:roomId/availability/:date', async (req, res) => {
+    try {
+        const { roomId, date } = req.params;
+
+        if (!roomId) {
+            return res.status(400).json({ message: 'Room ID is required' });
+        }
+
+        if (!validateUUID(roomId)) {
+            return res.status(400).json({ message: 'Invalid UUID format' });
+        }
+
+        if (!date || !isValidDate(date)) {
+            return res.status(400).json({ message: 'Invalid or missing date. Format must be YYYY-MM-DD' });
+        }
+
+        const availability = await checkRoomAvailabilityForDay(roomId, date);
+        res.json({ roomId, date, availability });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
