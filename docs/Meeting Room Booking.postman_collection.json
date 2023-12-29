@@ -1,0 +1,3100 @@
+{
+	"info": {
+		"_postman_id": "a8cfeb67-6bcf-4642-837c-e45ff61c0674",
+		"name": "Meeting Room Booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19793603",
+		"_collection_link": "https://www.postman.com/restless-water-254194/workspace/public/collection/19793603-a8cfeb67-6bcf-4642-837c-e45ff61c0674?action=share&source=collection_link&creator=19793603"
+	},
+	"item": [
+		{
+			"name": "Buildings",
+			"item": [
+				{
+					"name": "Create Building",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Diri Care\",\n    \"location\": \"Jl. Kb. Jeruk Baru, Jakarta\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/buildings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"buildings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Diricare Offices\",\n    \"location\": \"Jl. Kb. Jeruk Baru, Jakarta\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/buildings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"buildings"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "112"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"70-xkaUPEKuGDFVk+nGzJbyxcm25OY\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:03:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"cc3bdc54-ff63-4980-903b-fde52277cc9b\",\n    \"name\": \"Diricare Offices\",\n    \"location\": \"Jl. Kb. Jeruk Baru, Jakarta\"\n}"
+						},
+						{
+							"name": "ERROR-Duplicated",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Diri Care\",\n    \"location\": \"Jl. Kb. Jeruk Baru, Jakarta\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/buildings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"buildings"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "37"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25-EgiQvJNJQt2M9b/eOj1xHUxU2a0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:06:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Building already exists\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Lists Buildings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/buildings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"buildings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/buildings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"buildings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "333"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"14d-Nqx2MhFQOfHwVYl9QiY3c3GDktI\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:07:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"9fe6bf71-c089-48a9-a692-196fb873ef5d\",\n        \"name\": \"Diri Care\",\n        \"location\": \"Jl. Kb. Jeruk Baru, Jakarta\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Building By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/buildings/:building-id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"buildings",
+								":building-id"
+							],
+							"variable": [
+								{
+									"key": "building-id",
+									"value": "cc3bdc54-ff63-4980-903b-fde52277cc9b"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ERROR-Invalid UUID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/buildings/:building-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"buildings",
+										":building-id"
+									],
+									"variable": [
+										{
+											"key": "building-id",
+											"value": "cc3bdc54-ff63-4980-903b-fde52277cc9s"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-NnEhvjRfFkMl/YwE/CGJW5U7yMk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:14:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid UUID format\"\n}"
+						},
+						{
+							"name": "ERROR-Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/buildings/:building-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"buildings",
+										":building-id"
+									],
+									"variable": [
+										{
+											"key": "building-id",
+											"value": "cc3bdc54-ff63-4980-903b-fde52277cc9a"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-Vg9MNlgZsYZPKqWN/Ia6InVmmm8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:15:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Building not found\"\n}"
+						},
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/buildings/:building-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"buildings",
+										":building-id"
+									],
+									"variable": [
+										{
+											"key": "building-id",
+											"value": "cc3bdc54-ff63-4980-903b-fde52277cc9b"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "112"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"70-xkaUPEKuGDFVk+nGzJbyxcm25OY\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:15:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"cc3bdc54-ff63-4980-903b-fde52277cc9b\",\n    \"name\": \"Diricare Offices\",\n    \"location\": \"Jl. Kb. Jeruk Baru, Jakarta\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Building",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Diri Care Malang\",\n    \"location\": \"Jl Jalan Aja\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/buildings/:building-id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"buildings",
+								":building-id"
+							],
+							"variable": [
+								{
+									"key": "building-id",
+									"value": "c1831e6a-f828-44c1-8b82-8c36b98c43d9"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ERROR-Invalid UUID",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Updated Building Name\",\n    \"location\": \"Updated Location\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/buildings/:building-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"buildings",
+										":building-id"
+									],
+									"variable": [
+										{
+											"key": "building-id",
+											"value": "c1831e6a-f828-44c1-8b82-8c36b98c43ds"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-NnEhvjRfFkMl/YwE/CGJW5U7yMk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:17:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid UUID format\"\n}"
+						},
+						{
+							"name": "ERROR-Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Updated Building Name\",\n    \"location\": \"Updated Location\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/buildings/:building-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"buildings",
+										":building-id"
+									],
+									"variable": [
+										{
+											"key": "building-id",
+											"value": "c1831e6a-f828-44c1-8b82-8c36b98c43da"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-Vg9MNlgZsYZPKqWN/Ia6InVmmm8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:17:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Building not found\"\n}"
+						},
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Diri Care Malang\",\n    \"location\": \"Jl Jalan Aja\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/buildings/:building-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"buildings",
+										":building-id"
+									],
+									"variable": [
+										{
+											"key": "building-id",
+											"value": "c1831e6a-f828-44c1-8b82-8c36b98c43d9"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "97"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"61-T2J7MKnS2/pAW88/S3rQTRbfArQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:18:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"c1831e6a-f828-44c1-8b82-8c36b98c43d9\",\n    \"name\": \"Diri Care Malang\",\n    \"location\": \"Jl Jalan Aja\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Building",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/buildings/:building-id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"buildings",
+								":building-id"
+							],
+							"variable": [
+								{
+									"key": "building-id",
+									"value": "cc3bdc54-ff63-4980-903b-fde52277cc9b"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ERROR-Invalid UUID",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/buildings/:building-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"buildings",
+										":building-id"
+									],
+									"variable": [
+										{
+											"key": "building-id",
+											"value": "cc3bdc54-ff63-4980-903b-fde52277cc9s"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-NnEhvjRfFkMl/YwE/CGJW5U7yMk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:16:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid UUID format\"\n}"
+						},
+						{
+							"name": "ERROR-Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/buildings/:building-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"buildings",
+										":building-id"
+									],
+									"variable": [
+										{
+											"key": "building-id",
+											"value": "cc3bdc54-ff63-4980-903b-fde52277cc9c"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-Vg9MNlgZsYZPKqWN/Ia6InVmmm8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:16:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Building not found\"\n}"
+						},
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/buildings/:building-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"buildings",
+										":building-id"
+									],
+									"variable": [
+										{
+											"key": "building-id",
+											"value": "cc3bdc54-ff63-4980-903b-fde52277cc9b"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-lYDTU8V65KNOJlAKyHOxb5NXkLU\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:16:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Building successfully deleted\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Rooms",
+			"item": [
+				{
+					"name": "Create Room",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"building_id\": \"a264a72c-e9c9-41e4-8b81-5a62f7d70a4e\",\n    \"name\": \"Semeru\",\n    \"capacity\": 100\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/rooms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"rooms"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ERROR-Invalid UUID",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"building_id\": \"9fe6bf71-c089-48a9-a692-196fb873ef5s\",\n    \"name\": \"Welirang\",\n    \"capacity\": 10\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/rooms",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"rooms"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-kNYdO6EAevqXQHD/EBM7jrPUP44\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:31:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid building UUID format\"\n}"
+						},
+						{
+							"name": "ERROR-Duplicated",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"building_id\": \"9fe6bf71-c089-48a9-a692-196fb873ef5d\",\n    \"name\": \"Welirang\",\n    \"capacity\": 10\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/rooms",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"rooms"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a-BIuUBEjw0Z64uPhlb021JJcks4E\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:31:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Room name must be unique within the building\"\n}"
+						},
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"building_id\": \"9fe6bf71-c089-48a9-a692-196fb873ef5d\",\n    \"name\": \"Welirang\",\n    \"capacity\": 10\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/rooms",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"rooms"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "130"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"82-T1xE9DUX93pKl3fVXUBayPw9bkc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:31:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"2f8ec513-6b70-4e76-8124-94713e85c7ae\",\n    \"building_id\": \"9fe6bf71-c089-48a9-a692-196fb873ef5d\",\n    \"name\": \"Welirang\",\n    \"capacity\": 10,\n    \"is_booked\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "Get List Rooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/rooms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"rooms"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS-But Empty",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/rooms",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"rooms"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:30:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						},
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/rooms",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"rooms"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "132"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"84-WfCHXP5ygknTfDR6lDfDKpwZ35s\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:33:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"2f8ec513-6b70-4e76-8124-94713e85c7ae\",\n        \"building_id\": \"9fe6bf71-c089-48a9-a692-196fb873ef5d\",\n        \"name\": \"Welirang\",\n        \"capacity\": 10\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Room By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/rooms/:room-id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"rooms",
+								":room-id"
+							],
+							"variable": [
+								{
+									"key": "room-id",
+									"value": "c4737bb3-09b1-4304-8888-a52eb6f34f8e"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ERROR-Invalid UUID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/rooms/:room-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"rooms",
+										":room-id"
+									],
+									"variable": [
+										{
+											"key": "room-id",
+											"value": "2f8ec513-6b70-4e76-8124-94713e85c7as"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-NnEhvjRfFkMl/YwE/CGJW5U7yMk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:33:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid UUID format\"\n}"
+						},
+						{
+							"name": "ERROR-Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/rooms/:room-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"rooms",
+										":room-id"
+									],
+									"variable": [
+										{
+											"key": "room-id",
+											"value": "2f8ec513-6b70-4e76-8124-94713e85c7aa"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-ecF7Xczsy7b75ZFcGvwagM/Xkog\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:33:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Room not found\"\n}"
+						},
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/rooms/:room-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"rooms",
+										":room-id"
+									],
+									"variable": [
+										{
+											"key": "room-id",
+											"value": "2f8ec513-6b70-4e76-8124-94713e85c7ae"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "130"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"82-T1xE9DUX93pKl3fVXUBayPw9bkc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:33:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"2f8ec513-6b70-4e76-8124-94713e85c7ae\",\n    \"building_id\": \"9fe6bf71-c089-48a9-a692-196fb873ef5d\",\n    \"name\": \"Welirang\",\n    \"capacity\": 10\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Room",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"building_id\": \"9fe6bf71-c089-48a9-a692-196fb873ef5d\",\n    \"name\": \"Welirang\",\n    \"capacity\": 10\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/rooms/:room-id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"rooms",
+								":room-id"
+							],
+							"variable": [
+								{
+									"key": "room-id",
+									"value": "2f8ec513-6b70-4e76-8124-94713e85c7ae"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ERROR-Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"building_id\": \"2f8ec513-6b70-4e76-8124-94713e85c7ae\",\n    \"name\": \"Welirang\",\n    \"capacity\": 10\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/rooms/:room-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"rooms",
+										":room-id"
+									],
+									"variable": [
+										{
+											"key": "room-id",
+											"value": "2f8ec513-6b70-4e76-8124-94713e85c7ae"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-Vg9MNlgZsYZPKqWN/Ia6InVmmm8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:35:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Building not found\"\n}"
+						},
+						{
+							"name": "ERROR-Invalid UUID",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"building_id\": \"9fe6bf71-c089-48a9-a692-196fb873ef5s\",\n    \"name\": \"Welirang\",\n    \"capacity\": 10\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/rooms/:room-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"rooms",
+										":room-id"
+									],
+									"variable": [
+										{
+											"key": "room-id",
+											"value": "2f8ec513-6b70-4e76-8124-94713e85c7ae"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-NnEhvjRfFkMl/YwE/CGJW5U7yMk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:35:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid UUID format\"\n}"
+						},
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"building_id\": \"9fe6bf71-c089-48a9-a692-196fb873ef5d\",\n    \"name\": \"Welirang\",\n    \"capacity\": 10\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/rooms/:room-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"rooms",
+										":room-id"
+									],
+									"variable": [
+										{
+											"key": "room-id",
+											"value": "2f8ec513-6b70-4e76-8124-94713e85c7ae"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "130"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"82-T1xE9DUX93pKl3fVXUBayPw9bkc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:36:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"2f8ec513-6b70-4e76-8124-94713e85c7ae\",\n    \"building_id\": \"9fe6bf71-c089-48a9-a692-196fb873ef5d\",\n    \"name\": \"Welirang\",\n    \"capacity\": 10\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Room",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/rooms/:room-id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"rooms",
+								":room-id"
+							],
+							"variable": [
+								{
+									"key": "room-id",
+									"value": "1d648ed0-993a-43de-a3bc-ba9c032873a6"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ERROR-Invalid UUID",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/rooms/:room-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"rooms",
+										":room-id"
+									],
+									"variable": [
+										{
+											"key": "room-id",
+											"value": "9fe6bf71-c089-48a9-a692-196fb873ef5s"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-NnEhvjRfFkMl/YwE/CGJW5U7yMk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:37:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid UUID format\"\n}"
+						},
+						{
+							"name": "ERROR-Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/rooms/:room-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"rooms",
+										":room-id"
+									],
+									"variable": [
+										{
+											"key": "room-id",
+											"value": "9fe6bf71-c089-48a9-a692-196fb873ef5d"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-ecF7Xczsy7b75ZFcGvwagM/Xkog\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:37:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Room not found\"\n}"
+						},
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/rooms/:room-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"rooms",
+										":room-id"
+									],
+									"variable": [
+										{
+											"key": "room-id",
+											"value": "1d648ed0-993a-43de-a3bc-ba9c032873a6"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "183"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b7-Caf6O+2YnIUZSh0fUVsMG7rs7v0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 08:38:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Room deleted successfully\",\n    \"deletedRoom\": {\n        \"id\": \"1d648ed0-993a-43de-a3bc-ba9c032873a6\",\n        \"building_id\": \"9fe6bf71-c089-48a9-a692-196fb873ef5d\",\n        \"name\": \"Semeru\",\n        \"capacity\": 100\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "Booking Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n    \"start_time\": \"2023-07-01T11:00:00\",\n    \"end_time\": \"2023-07-01T13:00:00\",\n    \"purpose\": \"Team Meeting\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/bookings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bookings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ERROR-Room Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n    \"start_time\": \"2023-07-01T09:00:00\",\n    \"end_time\": \"2023-07-01T11:00:00\",\n    \"purpose\": \"Team Meeting\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/bookings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bookings"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-ecF7Xczsy7b75ZFcGvwagM/Xkog\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 09:53:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Room not found\"\n}"
+						},
+						{
+							"name": "ERROR-Room Already Booked",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n    \"start_time\": \"2023-07-01T09:00:00\",\n    \"end_time\": \"2023-07-01T11:00:00\",\n    \"purpose\": \"Team Meeting\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/bookings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bookings"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3e-de4eoZi9PuwrE7o4e/gpfv04WS8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 10:17:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Room is already booked during the specified time\"\n}"
+						},
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n    \"start_time\": \"2023-07-01T11:00:00\",\n    \"end_time\": \"2023-07-01T13:00:00\",\n    \"purpose\": \"Team Meeting\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/bookings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bookings"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "197"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c5-p1v40xT2aCbXd3uQeT3ldhffoRA\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 10:19:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"0c33f385-32dc-4848-877c-72918ca99c8c\",\n    \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n    \"start_time\": \"2023-07-01T11:00:00.000Z\",\n    \"end_time\": \"2023-07-01T13:00:00.000Z\",\n    \"purpose\": \"Team Meeting\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get List Booking",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/bookings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bookings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/bookings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bookings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "397"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"18d-TTMSnE5+9HYh1koAk7CzIkiLAK8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 10:20:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"cd858d08-531b-4b4d-90ec-9c7404eaba13\",\n        \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n        \"start_time\": \"2023-07-01T09:00:00.000Z\",\n        \"end_time\": \"2023-07-01T11:00:00.000Z\",\n        \"purpose\": \"Team Meeting - Squad A\"\n    },\n    {\n        \"id\": \"0c33f385-32dc-4848-877c-72918ca99c8c\",\n        \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n        \"start_time\": \"2023-07-01T11:00:00.000Z\",\n        \"end_time\": \"2023-07-01T13:00:00.000Z\",\n        \"purpose\": \"Team Meeting - Squad B\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Booking By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/bookings/:booking-id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bookings",
+								":booking-id"
+							],
+							"variable": [
+								{
+									"key": "booking-id",
+									"value": "cd858d08-531b-4b4d-90ec-9c7404eaba13"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/bookings/:booking-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bookings",
+										":booking-id"
+									],
+									"variable": [
+										{
+											"key": "booking-id",
+											"value": "cd858d08-531b-4b4d-90ec-9c7404eaba13"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "197"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c5-W6JUkkJBSmvm923CddP6QsBQRgM\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 10:22:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"cd858d08-531b-4b4d-90ec-9c7404eaba13\",\n    \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n    \"start_time\": \"2023-07-01T09:00:00.000Z\",\n    \"end_time\": \"2023-07-01T11:00:00.000Z\",\n    \"purpose\": \"Team Meeting\"\n}"
+						},
+						{
+							"name": "ERROR-Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/bookings/:booking-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bookings",
+										":booking-id"
+									],
+									"variable": [
+										{
+											"key": "booking-id",
+											"value": "cd858d08-531b-4b4d-90ec-9c7404eaba12"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-lrk4syj5iI3EadrCIUq8hhovUfA\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 10:22:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Booking not found\"\n}"
+						},
+						{
+							"name": "ERROR-Invalid UUID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/bookings/:booking-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bookings",
+										":booking-id"
+									],
+									"variable": [
+										{
+											"key": "booking-id",
+											"value": "cd858d08-531b-4b4d-90ec-9c7404eaba1s"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-NnEhvjRfFkMl/YwE/CGJW5U7yMk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 10:28:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid UUID format\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Booking",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n    \"start_time\": \"2023-07-01T09:00:00\",\n    \"end_time\": \"2023-07-01T13:00:00\",\n    \"purpose\": \"Team Meeting\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/bookings/:booking-id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bookings",
+								":booking-id"
+							],
+							"variable": [
+								{
+									"key": "booking-id",
+									"value": "cd858d08-531b-4b4d-90ec-9c7404eaba13"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n    \"start_time\": \"2023-07-01T07:00:00\",\n    \"end_time\": \"2023-07-01T09:00:00\",\n    \"purpose\": \"Team Meeting\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/bookings/:booking-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bookings",
+										":booking-id"
+									],
+									"variable": [
+										{
+											"key": "booking-id",
+											"value": "cd858d08-531b-4b4d-90ec-9c7404eaba13"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "197"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c5-8yEVWyjVzXk+yJRdX8ZSTJBrg2U\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 10:29:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"cd858d08-531b-4b4d-90ec-9c7404eaba13\",\n    \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n    \"start_time\": \"2023-07-01T07:00:00.000Z\",\n    \"end_time\": \"2023-07-01T09:00:00.000Z\",\n    \"purpose\": \"Team Meeting\"\n}"
+						},
+						{
+							"name": "ERROR-Room Already Booked",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n    \"start_time\": \"2023-07-01T09:00:00\",\n    \"end_time\": \"2023-07-01T13:00:00\",\n    \"purpose\": \"Team Meeting\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/bookings/:booking-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bookings",
+										":booking-id"
+									],
+									"variable": [
+										{
+											"key": "booking-id",
+											"value": "cd858d08-531b-4b4d-90ec-9c7404eaba13"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3e-de4eoZi9PuwrE7o4e/gpfv04WS8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 10:30:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Room is already booked during the specified time\"\n}"
+						},
+						{
+							"name": "ERROR-Booking Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n    \"start_time\": \"2023-07-01T09:00:00\",\n    \"end_time\": \"2023-07-01T13:00:00\",\n    \"purpose\": \"Team Meeting\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/bookings/:booking-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bookings",
+										":booking-id"
+									],
+									"variable": [
+										{
+											"key": "booking-id",
+											"value": "cd858d08-531b-4b4d-90ec-9c7404eaba12"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-lrk4syj5iI3EadrCIUq8hhovUfA\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 10:30:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Booking not found\"\n}"
+						},
+						{
+							"name": "ERROR-Room Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f82\",\n    \"start_time\": \"2023-07-01T09:00:00\",\n    \"end_time\": \"2023-07-01T13:00:00\",\n    \"purpose\": \"Team Meeting\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/bookings/:booking-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bookings",
+										":booking-id"
+									],
+									"variable": [
+										{
+											"key": "booking-id",
+											"value": "cd858d08-531b-4b4d-90ec-9c7404eaba13"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-ecF7Xczsy7b75ZFcGvwagM/Xkog\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 10:31:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Room not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Cancel Booking",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/bookings/:booking-id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bookings",
+								":booking-id"
+							],
+							"variable": [
+								{
+									"key": "booking-id",
+									"value": "0c33f385-32dc-4848-877c-72918ca99c8c"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/bookings/:booking-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bookings",
+										":booking-id"
+									],
+									"variable": [
+										{
+											"key": "booking-id",
+											"value": "0c33f385-32dc-4848-877c-72918ca99c8c"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "257"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"101-BDmmulsz4e/cqO0gJVteNUXASW4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 10:40:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Booking deleted successfully\",\n    \"deletedBooking\": {\n        \"id\": \"0c33f385-32dc-4848-877c-72918ca99c8c\",\n        \"room_id\": \"c4737bb3-09b1-4304-8888-a52eb6f34f8e\",\n        \"start_time\": \"2023-07-01T11:00:00.000Z\",\n        \"end_time\": \"2023-07-01T13:00:00.000Z\",\n        \"purpose\": \"Team Meeting\"\n    }\n}"
+						},
+						{
+							"name": "ERROR-Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/bookings/:booking-id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"bookings",
+										":booking-id"
+									],
+									"variable": [
+										{
+											"key": "booking-id",
+											"value": "0c33f385-32dc-4848-877c-72918ca99c8e"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-lrk4syj5iI3EadrCIUq8hhovUfA\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Dec 2023 10:40:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Booking not found\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "PING",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/ping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ping"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "SUCCESS",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/ping",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "5"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5-sNOzxq3RrrTFdgA0RKrWCSHPHMk\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 29 Dec 2023 08:00:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "PONG!"
+				}
+			]
+		}
+	]
+}
